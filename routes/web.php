@@ -11,6 +11,8 @@
 |
 */
 
+Route::resource('articles', 'ArticlesController');
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('auth/login', function(){
@@ -46,3 +48,7 @@ Route::get('auth/logout', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+DB::listen(function ($query){
+   var_dump($query->sql);
+});

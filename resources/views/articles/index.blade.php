@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class='container">
+    <div class="container">
 	<h1>포럼 글 목록</h1>
 	<hr/>
 	<ul>
@@ -17,4 +17,9 @@
 	    @endforelse		
 	</ul>
     </div>
+    @if($articles->count())
+	<div class="text-center">
+	    {!! $articles->render() !!}}
+	</div>
+    @endif
 @stop
